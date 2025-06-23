@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ property.title }}</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <div class="property-detail">
+    <img src="{{ property.image.url }}" alt="{{ property.title }}">
+    <h1>{{ property.title }}</h1>
+    <p>{{ property.description }}</p>
+    <p><strong>Price:</strong> ${{ property.price }}</p>
+    <p><strong>Location:</strong> {{ property.location }}</p>
+    {% if property.is_available %}
+      <form method="post" action="{% url 'buy_property' property.id %}">
+        {% csrf_token %}
+        <button type="submit">Buy</button>
+      </form>
+    {% else %}
+      <p class="sold-out">Sold</p>
+    {% endif %}
+    <a href="{% url 'property_list' %}">← Back to Listings</a>
+  </div>
+</body>
+</html>

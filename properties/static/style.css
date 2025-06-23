@@ -1,0 +1,342 @@
+/* General Styles */
+body {
+  font-family: josefin sans, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  background: rgb(255, 255, 255, 0.6); /* Header background color */
+  color: rgb(246, 241, 241);
+  padding: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: centre;
+  align-items: center;
+  position: relative; /* Make header overlay the banner */
+  width: 100%; /* Full width */
+  z-index: 10; /* Keep header above */
+  color: white; /* Adjust text color for visibility */
+}
+header {
+  text-align: center; /* Center text */
+  justify-content: center; /* Spaces out elements */
+  display: flex;
+  align-items: center; /* Center elements */
+}
+
+header h1 {
+  font-size: 30px; /* Increase company name size */
+  font-weight: bold; /* Make it stand out */
+  margin-right: 1zpx; /* Adds space between name and navigation */
+  margin-left: -70px;
+  color:#ff9800; /* Stylish orange color */
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 750px; /* Moves the search bar to the left */
+    margin-top: -100px; /* Moves the logo upward */
+    gap: 10px; /* Adds space between input and button */
+}
+
+#search-box {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-btn {
+    padding: 8px 15px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Moves logo to the left */
+  position: relative;
+  margin-left: -680px; /* Adjust as needed */
+  margin-top: -110px; /* Moves the logo upward */
+}
+.logo-container img {
+  max-width: 100px; /* Adjust the size */
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li {
+  display: inline-block; /* Keeps links in one line */
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px; /* Increase navigation button text */
+  font-weight: bold;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  height: 120vh;
+  background: url('https://i.pinimg.com/736x/40/8b/27/408b2755e7821505ff68e73e39f5ccda.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: rgb(7, 78, 129);
+}
+
+.banner-content {
+  padding: 10px;/* Banner Content - Push Text Higher */
+  position: absolute;
+  top: 120px; /* Moves the text higher */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  font-size: 38px; /* Make the heading larger */
+  font-weight: bold;
+  margin-bottom: 20px; /* Reduce spacing below the heading */
+  
+}
+
+.banner-content p {
+  font-size: 18px; /* Increase paragraph text */
+}
+/* Banner Images */
+.banner-images {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 80px;
+}
+
+.banner-images img {
+  width: 350px; /* Increase size */
+  height: 320px; /* Maintain aspect ratio */
+  border: 4px solid white; /* Make them pop */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.banner-images img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+/* Properties */
+#properties {
+  padding: 40px;
+  text-align: center;
+}
+
+.property-container {
+  display: flex;
+  gap: 1px;
+  justify-content: center;
+}
+
+.property-card {
+  background: white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center the description */
+  font-size: 18px; /* Make text readable but not too large */
+  max-width: 250px; /* Restrict width to keep descriptions short */
+  margin: 0 auto; /* Center within the card */
+}
+
+.property-card img {
+  width: 100%; /* Set a fixed width */
+  height: 200px; /* Set a uniform height */
+  object-fit: cover; /* Ensures proper cropping */
+  border-radius: 10px; /* Optional: adds smooth edges */
+}
+.property-card p {
+  font-weight: bold; /* Makes the price text stand out */
+  font-size: 18px; /* Keeps it readable */
+  text-align: center; /* Centers the text */
+}
+
+
+.social-media a {
+  color: #ff9800; /* Sets a bold orange color */
+  font-weight: bold;
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease-in-out; /* Smooth color change on hover */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full-page height */
+}
+
+footer {
+  margin-top: auto; /* Pushes footer to the bottom */
+  padding: 25px;
+  background: #222;
+  color: white;
+  text-align: center;
+}
+
+.social-media a:hover {
+  color: #ff5722; /* Changes to a deeper orange on hover */
+}
+.properties-header h1 {
+  color: #ff9800; /* Sets a stylish orange color */
+  font-weight: bold;
+}
+
+nav ul li a {
+  color: #ff9800; /* Sets a stylish orange color */
+  font-weight: bold;
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease-in-out; /* Smooth color change on hover */
+}
+
+nav ul li a:hover {
+  color: #ff5722; /* Changes to a deeper orange on hover */
+}
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5rem;
+  padding: 5rem;
+  justify-items: center;
+}
+
+.property-card {
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.buy-btn {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.properties-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 50px;
+}
+.property-detail {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+.property-detail img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.property-detail h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.property-detail p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.property-detail strong {
+  color: #111;
+}
+
+.property-detail .sold-out {
+  color: crimson;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.property-detail form {
+  margin-top: 2rem;
+}
+
+.property-detail button {
+  background-color: #00bfa5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.property-detail button:hover {
+  background-color: #009e89;
+}
+
+.property-detail a {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #00bfa5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.property-detail a:hover {
+  text-decoration: underline;
+}
