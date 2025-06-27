@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | Nest Homes</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+  <div class="contact-page-container">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you. Reach out via the form or details below.</p>
+
+    <div class="contact-details">
+      <p><strong>Phone:</strong> +254 712 345 678</p>
+      <p><strong>Email:</strong> info@nesthomes.co.ke</p>
+      <p><strong>Address:</strong> Mariwenyi, Taita-Taveta, Kenya</p>
+    </div>
+
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>

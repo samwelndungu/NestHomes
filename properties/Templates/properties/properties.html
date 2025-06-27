@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Properties - Nest Homes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Header -->
+    <header class="properties-header">
+      <h1>Our Properties</h1>
+      <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="properties.html">Properties</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+  <header>
+    <div class="logo-container">
+        <a href="index.html">
+        <img src="https://i.pinimg.com/736x/10/42/bb/1042bb95addcebcfdf2da2b37a9c27e3.jpg" alt="Company Logo">
+    </a>
+    </div>
+</header>
+  
+
+    <!-- Properties Showcase -->
+    <div class="property-grid">
+    {% for property in properties %}
+    <div class="property-card"data-aos="fade-right" data-aos-delay="{{ forloop.counter0|add:1 }}00">
+      <a href="{% url 'property_detail' property.id %}">
+      <img src="{{ property.image.url }}" alt="{{ property.title }}">
+        <h2>{{ property.title }}</h2>
+        <p>{{ property.short_description }}</p>
+<a href="{% url 'property_detail' property.pk %}">View Details</a>
+        <p><strong>Price:</strong> ${{ property.price }}</p>
+        <p><strong>Location:</strong> {{ property.location }}</p>
+        {% if property.is_available %}
+          <form method="post" action="{% url 'buy_property' property.id %}">
+            {% csrf_token %}
+            <a href="{% url 'contact' %}" class="btn buy-btn">Buy Now</a>
+          </form>
+        {% else %}
+          <p class="sold-out">Sold</p>
+        {% endif %}
+        </a>
+      </div>
+  {% endfor %}
+</div>
+    <!-- Footer -->
+    <footer class="properties-footer">
+      <h2>Contact Us</h2>
+      <p>Email: info@nesthomes.com | Phone: +254 76589865</p>
+      <div class="social-media">
+          <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+      </div>
+  </footer>
+  
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>

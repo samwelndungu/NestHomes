@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ property.title }}</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <div class="property-detail-container">
+    <div class="property-gallery">
+      <!-- Showcase images in a slideshow or grid -->
+      {% if property.front_yard %}
+    <img src="{{ property.front_yard.url }}" alt="Front Yard">
+  {% endif %}
+  {% if property.interior %}
+    <img src="{{ property.interior.url }}" alt="Interior View">
+  {% endif %}
+  {% if property.backyard %}
+    <img src="{{ property.backyard.url }}" alt="Backyard View">
+  {% endif %}
+
+      <!-- You can loop through images dynamically if using a related model -->
+    </div>
+  
+    <div class="property-info">
+      <h2>{{ property.title }}</h2>
+      <p><strong>Location:</strong> {{ property.location }}</p>
+      <p><strong>Price:</strong> KSh {{ property.price }}</p>
+      <p><strong>Description:</strong> {{ property.full_description }}</p>
+      <p><strong>Year Built:</strong> {{ property.year_built }}</p>
+      <p><strong>Parking:</strong> {{ property.parking_spaces }} spaces</p>
+      <p><strong>Furnished:</strong> {{ property.furnished|yesno:"Yes,No" }}</p>
+      <p><strong>Type:</strong> {{ property.get_property_type_display }}</p>
+      <p><strong>Amenities:</strong></p>
+    </div>
+    <div class="property-contact">
+      <a href="{% url 'contact' %}" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div>
+</body>
+</html>
