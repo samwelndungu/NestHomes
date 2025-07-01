@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Property
 from django.shortcuts import get_object_or_404, redirect
+from django.db.models import Q
 
 # Create your views here.
 
@@ -9,6 +10,12 @@ def index(request):
 
 def property_list(request):
     properties = Property.objects.filter(is_available=True)
+    query = request.GET.get('q', '')
+    if query:
+        properties = properties.filter(
+            Q(title__icontains=query) | Q(location__icontains=query) | Q(price__icontains=query) 
+        )
+    
     return render(request, 'properties/properties.html', {'properties': properties})
 
 def buy_property(request, property_id):

@@ -30,7 +30,11 @@
     </div>
 </header>
   
-
+ <!-- 🔍 Search Form goes here -->
+ <form method="GET" class="property-search-form">
+  <input type="text" name="q" placeholder="Search by Price or title or location..." value="{{ request.GET.q }}">
+  <button type="submit">Search</button>
+</form>
     <!-- Properties Showcase -->
     <div class="property-grid">
     {% for property in properties %}

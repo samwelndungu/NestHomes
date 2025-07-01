@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Nest Homes</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <div class="login-form-box">
+      <h2>Welcome Back</h2>
+      <p class="subtitle">sell your property here</p>
+
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          {{ form.username.label_tag }}
+          {{ form.username }}
+        </div>
+        <div class="form-group">
+          {{ form.password.label_tag }}
+          {{ form.password }}
+        </div>
+        <button type="submit">Login</button>
+      </form>
+
+      {% if form.errors %}
+        <p class="error-msg">Invalid username or password.</p>
+      {% endif %}
+
+      <div class="helper-links">
+        <a href="#">Forgot your password?</a> | <a href="#">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
